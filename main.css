@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#menuIcon {
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+}
+
+.menuIconBackground {
+    background-color: var(--red);;
+    border: 1px solid var(--red);
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px 2px #e08a8a;
+}
+
+.menuBackground {
+    background-color: var(--red);
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    transition: all 1s cubic-bezier(.42,0,.21,1.52);
+    z-index: -1;
+}
+
+.menuActivated {
+    width: 400px;
+    height: 400px;
+}
+
+.menuContent {
+    opacity: 0;
+    color: white;
+    position: relative;
+    left: 70px;
+    top: 40px;
+    font-size: 36px;
+    transition: opacity 1s ease-in-out;
+}
+
+.menuTextActivated {
+    opacity: 1;
+}
+
+p {
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+:root {
+    --dropDownWidth: 200px;
+    --dropDownBtnHeigth: 40px;
+    --red: rgb(216, 61, 61);
+  }
+
+.dropDownContainer {
+    position: relative;
+    top: 200px;
+    margin: auto;
+    height: 200px;
+    width: var(--dropDownWidth);
+}
+
+#dropDownBtn {
+    position: absolute;
+    border: none;
+    background-color: var(--red);
+    color: white;
+    cursor: pointer;
+    top: 0px;
+    font-size: 20px;
+    width: var(--dropDownWidth);
+    height: var(--dropDownBtnHeigth);
+}
+#dropDownBtn:hover {
+    background-color: rgb(235, 222, 222);
+    color: var(--red);
+}
+.dropDownContent {
+    position: absolute;
+    width: var(--dropDownWidth);
+    top: var(--dropDownBtnHeigth);
+    height: 0px;
+    background-color: var(--red);
+    color: white;
+    transition: height .3s ease-in-out;
+}
+
+.visible {
+    height: 80px;
+}
