@@ -1,0 +1,118 @@
+:root {
+  --dropDownWidth: 200px;
+  --dropDownBtnHeigth: 40px;
+  --red: rgb(216, 61, 61);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+#menuIcon {
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+.menuIconBackground {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  width: 40px;
+  border-radius: 50%;
+}
+
+.menuBackground {
+  background-color: var(--red);
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  transition: all 1s cubic-bezier(0.42, 0, 0.21, 1.52);
+  z-index: -1;
+}
+
+.menuActivated {
+  width: 400px;
+  height: 400px;
+}
+
+.menuContent {
+  color: white;
+  position: relative;
+  left: 70px;
+  top: 15px;
+  font-size: 36px;
+  visibility: hidden;
+}
+
+.menuTextActivated {
+  opacity: 1;
+  visibility: visible;
+}
+
+p {
+  margin: 5px 0px;
+  cursor: pointer;
+}
+
+.dropDownContainer {
+  position: relative;
+  top: 200px;
+  margin: auto;
+  height: 200px;
+  width: var(--dropDownWidth);
+}
+
+#dropDownBtn {
+  position: absolute;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  cursor: pointer;
+  top: 0px;
+  font-size: 20px;
+  width: var(--dropDownWidth);
+  height: var(--dropDownBtnHeigth);
+}
+.dropDownContent {
+  position: absolute;
+  width: var(--dropDownWidth);
+  top: var(--dropDownBtnHeigth);
+  height: 0px;
+  background-color: var(--red);
+  color: white;
+  visibility: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.visible {
+  height: 80px;
+  visibility: visible;
+}
+/* Image Slider */
+
+.imageSliderContainer {
+  border: 1px solid red;
+  height: 225px;
+  width: 10000px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+  transform: translate(20px);
+}
+.currentImage {
+  border: 5px solid black;
+  height: 225px;
+  width: 400px;
+  position: absolute;
+  display: inline-block;
+}
