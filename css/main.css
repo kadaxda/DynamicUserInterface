@@ -12,12 +12,22 @@
 
 body {
   height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    rgb(107, 1, 1),
+    rgba(73, 130, 253, 0.925)
+  );
 }
-
+.menuContainer {
+  height: 50px;
+  width: 200px;
+}
 #menuIcon {
   font-size: 36px;
   color: white;
   cursor: pointer;
+  position: relative;
+  z-index: 3;
 }
 
 .menuIconBackground {
@@ -36,12 +46,12 @@ body {
   height: 0px;
   border-radius: 50%;
   transition: all 1s cubic-bezier(0.42, 0, 0.21, 1.52);
-  z-index: -1;
 }
 
 .menuActivated {
   width: 400px;
   height: 400px;
+  z-index: 2;
 }
 
 .menuContent {
@@ -54,8 +64,8 @@ body {
 }
 
 .menuTextActivated {
-  opacity: 1;
   visibility: visible;
+  z-index: 2;
 }
 
 p {
@@ -66,7 +76,6 @@ p {
 .dropDownContainer {
   position: relative;
   top: 200px;
-  margin: auto;
   height: 200px;
   width: var(--dropDownWidth);
 }
@@ -99,20 +108,54 @@ p {
 }
 /* Image Slider */
 
-.imageSliderContainer {
-  border: 1px solid red;
+#imageSliderContainer {
   height: 225px;
   width: 10000px;
-  position: relative;
-  top: -5px;
-  left: -5px;
-  z-index: -1;
-  transform: translate(20px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  transition: left 0.8s ease-in-out;
 }
 .currentImage {
-  border: 5px solid black;
+  border: 5px solid var(--red);
   height: 225px;
   width: 400px;
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   display: inline-block;
+}
+
+.material-icons-outlined {
+  z-index: 1;
+  color: black;
+  position: absolute;
+  top: 90px;
+  cursor: pointer;
+}
+#forward {
+  right: 10px;
+  font-size: 40px;
+}
+#back {
+  left: 10px;
+  font-size: 40px;
+}
+
+.wrap {
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 20px;
+  }
+  .currentImage {
+    width: 300px;
+  }
 }

@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css" />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
       rel="stylesheet"
     />
   </head>
@@ -24,16 +24,21 @@
       </div>
     </div>
 
-    <div class="dropDownContent">
-      <p>Menu</p>
-      <p>Home</p>
-      <p>Contact</p>
-    </div>
+    <div class="wrap">
+      <div class="dropDownContent">
+        <p>Menu</p>
+        <p>Home</p>
+        <p>Contact</p>
+      </div>
 
-    <div class="currentImage">
-      <div class="imageSliderContainer"></div>
+      <div class="currentImage">
+        <div id="imageSliderContainer"></div>
+        <span class="material-icons-outlined" id="forward">
+          arrow_forward_ios
+        </span>
+        <span class="material-icons-outlined" id="back"> arrow_back_ios </span>
+      </div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 function addDropDownBtn() {
+  const wrap = document.querySelector(".wrap");
   // Drop Down Button
   const dropDownBtn = document.createElement("button");
   dropDownBtn.setAttribute("id", "dropDownBtn");
@@ -22,7 +23,7 @@ function addDropDownBtn() {
 
   dropDownContent.parentElement.removeChild(dropDownContent);
   dropDownContainer.appendChild(dropDownBtn);
-  document.body.appendChild(dropDownContainer);
+  wrap.appendChild(dropDownContainer);
 }
 
 addDropDownBtn();
@@ -53,8 +54,13 @@ let imagesArray = [
 ];
 
 function addImageSlider(imageArray) {
-  const imageSliderContainer = document.querySelector(".imageSliderContainer");
+  let imageSliderContainer = document.getElementById("imageSliderContainer");
   const currentImage = document.querySelector(".currentImage");
+  const backBtn = document.querySelector("#back");
+  const forwardsBtn = document.querySelector("#forward");
+  let posX = 0;
+
+  let a = setInterval(moveForwards, 5000);
 
   for (let i = 0; i < imageArray.length; i++) {
     let image = document.createElement("img");
@@ -66,10 +72,27 @@ function addImageSlider(imageArray) {
     imageSliderContainer.appendChild(image);
   }
 
-  currentImage.addEventListener("click", () => {
-    console.log("H");
-    imageSliderContainer.setAttribute("transform", "translate(-400px)");
-  });
+  forwardsBtn.addEventListener("click", moveForwards);
+  backBtn.addEventListener("click", moveBack);
+
+  function moveForwards() {
+    posX = posX - 395;
+
+    if (posX == -imageArray.length * 395) {
+      posX = 0;
+    }
+
+    imageSliderContainer.style.left = `${posX}px`;
+  }
+
+  function moveBack() {
+    posX = posX + 395;
+
+    if (posX > 0) {
+      posX = -(imageArray.length - 1) * 395;
+    }
+    imageSliderContainer.style.left = `${posX}px`;
+  }
 }
 
 addImageSlider(imagesArray);
