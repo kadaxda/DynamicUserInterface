@@ -58,9 +58,10 @@ function addImageSlider(imageArray) {
   const currentImage = document.querySelector(".currentImage");
   const backBtn = document.querySelector("#back");
   const forwardsBtn = document.querySelector("#forward");
+  const dotContainer = document.querySelector(".dotContainer");
   let posX = 0;
 
-  let a = setInterval(moveForwards, 5000);
+  // let a = setInterval(moveForwards, 5000);
 
   for (let i = 0; i < imageArray.length; i++) {
     let image = document.createElement("img");
@@ -71,6 +72,21 @@ function addImageSlider(imageArray) {
     image.setAttribute("z-index", "-1");
     imageSliderContainer.appendChild(image);
   }
+
+  for (let i = 0; i < imageArray.length; i++) {
+    let dot = document.createElement("div");
+    dot.setAttribute("class", "material-icons-outlined");
+    dot.setAttribute("id", "dot");
+    dot.textContent = "fiber_manual_record";
+    dotContainer.appendChild(dot);
+  }
+
+  let dots = document.querySelectorAll("#dot");
+  dots.forEach((dot) => {
+    dot.addEventListener("click", (e) => {
+      console.log(e);
+    });
+  });
 
   forwardsBtn.addEventListener("click", moveForwards);
   backBtn.addEventListener("click", moveBack);
