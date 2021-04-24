@@ -12,11 +12,6 @@
 
 body {
   height: 100vh;
-  background-image: linear-gradient(
-    45deg,
-    rgb(107, 1, 1),
-    rgba(73, 130, 253, 0.925)
-  );
 }
 .menuContainer {
   height: 50px;
@@ -136,10 +131,12 @@ p {
 #forward {
   right: 10px;
   font-size: 40px;
+  color: white;
 }
 #back {
   left: 10px;
   font-size: 40px;
+  color: white;
 }
 
 .wrap {
@@ -162,6 +159,7 @@ p {
 }
 
 #dot {
+  color: white;
 }
 
 @media (max-width: 480px) {
